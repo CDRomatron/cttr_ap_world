@@ -85,6 +85,102 @@ location_table = {
     "Mission73",            #t2wCrystal-nginW3
     "Mission74",            #t2wCrystal-ninaW3
     "Mission75",            #t2wCrystal-voncW3
+
+    #Happily Ever Faster
+    "Mission13",            #1000-cocoskin
+    "Mission14",            #1000-ngin skin?
+    "Mission19",            #1000-crystal
+    "Mission20",            #1000-crystal
+    "Mission21",            #1000-crystal
+    "Mission22",            #1500-crashskin-blacktie
+    "DinoKeyCollection",
+    "DOR6",
+    "DOR11",
+    "DOR13",
+    "DOR29",
+    "Fairy1",
+    "Fairy2",
+    "Fairy3",
+    "FairySecret",
+    "FairyArena",
+    "GagDroneFairy",
+    "GagPoisonApple",
+
+    #Tyrannosaurus Wrecks
+
+    "DinoSecret",
+    "Mission23",            #1500-crashkin-cave
+    "Mission24",            #1000-crystal
+    "Mission25",            #1500-nina skin?
+    "Mission30",            #1000-crystal
+    "Mission31",            #1000-crystal
+    "Mission32",            #bear-crystal
+    "EgyptKey",
+    "DOR2",
+    "DOR15",
+    "DOR18",
+    "DOR20",
+    "DOR22",
+    "DOR25",
+    "DOR27",
+    "DOR28",
+    "Dino1",
+    "Dino2",
+    "Dino3",
+    "DinoArena",
+    "GagDroneDart"
+
+    #Tomb Town
+
+    "SolarKeyCollection",
+    "Mission37",            #2000-skin pasadena
+    "Mission38",            #2000-skin crunch
+    "Mission39",            #1000-crystal
+    "Mission40",            #1000-crystal
+    "Mission41",            #1000-crystal
+    "Mission42",            #2500-skincrash-mad
+    "DOR3",
+    "DOR7",
+    "DOR8",
+    "DOR9",
+    "DOR23",
+    "EgyptSecret",
+    "Egypt1",
+    "Egypt2",
+    "Egypt3",
+    "EgyptArena",
+    "GagTenTonWeight",
+
+    #Astro Land
+
+    "Victory",              #SolarStoryComplete
+    "Mission43",            #3500-skincrash-hiphop
+    "Mission44",            #2000-voncskin
+    "Mission49",            #1000-crystal
+    "Mission50",            #1000-crystal
+    "Mission51",            #1000-crystal
+    "Mission52",            #4000-skincrash-skeleton
+    "Mission53",            #8000-skincrash-star
+    "SolarSecret",
+    "Solar1",
+    "Solar2",
+    "Solar3",
+    "SolarArena",
+    "GagTwoDroneTele",
+    "GagWalrusDrone",
+    "GagRockethShip",
+    "DOR1",
+    "DOR16",
+    "DOR17",
+    "DOR21",
+    "DOR33",
+    "DOR34",
+
+    #All DOR
+
+    "Naked"                 #All DOR
+
+
 }
 
 exclusion_table = {
