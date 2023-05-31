@@ -1,5 +1,5 @@
 import typing
-from BaseClasses import Location
+from ...BaseClasses import Location
 
 #this is the list of checks
 
@@ -11,7 +11,7 @@ class CTTRLocation(Location):
         self.event = not address
 
 
-location_table = {
+adventure_table = {
     #Mystery Island
     "Mission1",             #1000-crystal
     "Mission2",             #1000-crystal
@@ -33,8 +33,10 @@ location_table = {
     "DOR14",
     "DOR19",
     "DOR24",
-    "DOR32",
+    "DOR32"
+}
 
+midway_table = {
     #Midway
     "AdventureKeyCollection",
     "DOR5",
@@ -84,8 +86,10 @@ location_table = {
     "Mission72",            #t2wCrystal-pasadenaW3
     "Mission73",            #t2wCrystal-nginW3
     "Mission74",            #t2wCrystal-ninaW3
-    "Mission75",            #t2wCrystal-voncW3
+    "Mission75"             #t2wCrystal-voncW3
+}
 
+fairy_table = {
     #Happily Ever Faster
     "Mission13",            #1000-cocoskin
     "Mission14",            #1000-ngin skin?
@@ -104,8 +108,10 @@ location_table = {
     "FairySecret",
     "FairyArena",
     "GagDroneFairy",
-    "GagPoisonApple",
+    "GagPoisonApple"
+}
 
+dino_table = {
     #Tyrannosaurus Wrecks
 
     "DinoSecret",
@@ -129,7 +135,9 @@ location_table = {
     "Dino3",
     "DinoArena",
     "GagDroneDart"
+}
 
+egypt_table = {
     #Tomb Town
 
     "SolarKeyCollection",
@@ -149,8 +157,10 @@ location_table = {
     "Egypt2",
     "Egypt3",
     "EgyptArena",
-    "GagTenTonWeight",
+    "GagTenTonWeight"
+}
 
+solar_table = {
     #Astro Land
 
     "Victory",              #SolarStoryComplete
@@ -182,6 +192,8 @@ location_table = {
 
 
 }
+
+location_table = {**midway_table,**adventure_table,**fairy_table,**dino_table,**egypt_table,**solar_table}
 
 exclusion_table = {
 
