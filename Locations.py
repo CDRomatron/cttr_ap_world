@@ -194,13 +194,3 @@ solar_table = {
 }
 
 location_table = {**midway_table,**adventure_table,**fairy_table,**dino_table,**egypt_table,**solar_table}
-
-exclusion_table = {
-
-}
-
-events_table = {
-
-}
-
-lookup_id_to_name: typing.Dict[int, str] = {id: name for name, id in location_table.items()}

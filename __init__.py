@@ -1,4 +1,4 @@
-from ..AutoWorld import World, WebWorld
+from worlds.AutoWorld import World, WebWorld
 from BaseClasses import Item, Tutorial, ItemClassification, MultiWorld
 from .Items import item_table, CTTRItem
 from .Locations import location_table, CTTRLocation
