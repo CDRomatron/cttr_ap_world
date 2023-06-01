@@ -1,5 +1,5 @@
-from ...BaseClasses import MultiWorld, Region, Entrance
-from Locations import CTTRLocation, midway_table, adventure_table, fairy_table, dino_table, egypt_table, solar_table, \
+from BaseClasses import MultiWorld, Region, Entrance
+from .Locations import CTTRLocation, midway_table, adventure_table, fairy_table, dino_table, egypt_table, solar_table, \
     location_table
 
 hubs = ["Midway","Adventure","Fairy","Dino","Egypt","Solar"]

@@ -1,29 +1,25 @@
-from ...BaseClasses import Item
+from BaseClasses import Item
 import typing
-
-class ItemData(typing.NamedTuple):
-    code: typing.Optional[int]
-    progression: bool
 
 class CTTRItem(Item):
     game: str = "CTTR"
 
 item_table = {
-    "Victory": ItemData(1, True),
-    "Crystal": ItemData(2, False),
-    "CrashCar": ItemData(3, False),
-    "CortexCar": ItemData(4, False),
-    "CocoCar": ItemData(5, False),
-    "PasadenaCar": ItemData(6, False),
-    "NinaCar": ItemData(7, False),
-    "NGinCar": ItemData(8, False),
-    "CrunchCar": ItemData(9, False),
-    "VonClutchCar": ItemData(10, False),
-    "AdventureKey": ItemData(11, True),
-    "FairyKey": ItemData(12, True),
-    "DinoKey": ItemData(13, True),
-    "EgyptKey": ItemData(14, True),
-    "SolarKey": ItemData(15, True),
+    "Victory": 1,
+    "Crystal": 2,
+    "CrashCar": 3,
+    "CortexCar": 4,
+    "CocoCar": 5,
+    "PasadenaCar": 6,
+    "NinaCar": 7,
+    "NGinCar": 8,
+    "CrunchCar": 9,
+    "VonClutchCar": 10,
+    "AdventureKey": 11,
+    "FairyKey": 12,
+    "DinoKey": 13,
+    "EgyptKey": 14,
+    "SolarKey": 15
 
 }
 

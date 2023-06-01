@@ -1,5 +1,5 @@
 from ..generic.Rules import add_rule
-from Regions import connect_regions, hubs
+from .Regions import connect_regions, hubs
 
 def set_rules(world, player: int, area_connections):
     connect_regions(world, player, "Midway", hubs[0])

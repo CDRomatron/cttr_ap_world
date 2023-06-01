@@ -1,10 +1,10 @@
 from ..AutoWorld import World, WebWorld
-from ...BaseClasses import Item, Tutorial, ItemClassification
-from Items import item_table, CTTRItem
-from Locations import location_table, CTTRLocation
-from Options import cttr_options
-from Regions import create_regions, hubs
-from Rules import set_rules
+from BaseClasses import Item, Tutorial, ItemClassification, MultiWorld
+from .Items import item_table, CTTRItem
+from .Locations import location_table, CTTRLocation
+from .Options import cttr_options
+from .Regions import create_regions, hubs
+from .Rules import set_rules
 import typing
 import os
 import json
@@ -12,12 +12,12 @@ import json
 
 class CTTRWeb(WebWorld):
     tutorials = [Tutorial(
-        "Multiworld Setup Guide"
-        "A guide to setting up CTTR for MultiWorld",
+        "Multiworld Setup Guide",
+        "A guide to setting up CTTR for MultiWorld.",
         "English",
         "setup_en.md",
         "setup/en",
-        ["CDRomatron"]
+        ["testname"]
     )]
 
 class CTTRWorld(World):
@@ -38,6 +38,9 @@ class CTTRWorld(World):
     area_connections: typing.Dict[int, int]
 
     option_definitions = cttr_options
+
+    def __init__(self, world: MultiWorld, player: int):
+        super().__init__(world,player)
 
     def create_regions(self):
         create_regions(self.multiworld, self.player)
