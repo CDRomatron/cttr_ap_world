@@ -22,9 +22,3 @@ item_table = {
     "SolarKey": 15
 
 }
-
-# if not listed here, then 1
-item_frequencies = {
-}
-
-lookup_id_to_name: typing.Dict[int, str] = {data.code: item_name for item_name, data in item_table.items() if data.code}

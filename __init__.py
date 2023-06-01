@@ -44,6 +44,7 @@ class CTTRWorld(World):
 
     def create_regions(self):
         create_regions(self.multiworld, self.player)
+        self.multiworld.clear_location_cache()
 
     def set_rules(self):
         self.area_connections = {}
@@ -53,11 +54,19 @@ class CTTRWorld(World):
         item_id = item_table[name]
         if name == "Crystal":
             classification = ItemClassification.filler
+        else:
+            classification = ItemClassification.progression
 
         item = CTTRItem(name, classification, item_id, self.player)
         return item
 
     def create_items(self):
+        adventurekey = self.create_item("AdventureKey")
+        fairykey = self.create_item("FairyKey")
+        dinokey = self.create_item("DinoKey")
+        egyptkey = self.create_item("EgyptKey")
+        solarkey = self.create_item("SolarKey")
+        self.multiworld.itempool += [adventurekey, fairykey, dinokey, egyptkey, solarkey]
         self.multiworld.itempool += [self.create_item("CrashCar") for i in range(0, 5)]
         self.multiworld.itempool += [self.create_item("CortexCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("CocoCar") for i in range(0, 6)]
@@ -66,13 +75,8 @@ class CTTRWorld(World):
         self.multiworld.itempool += [self.create_item("NinaCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("NGinCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("VonClutchCar") for i in range(0, 6)]
-        self.multiworld.itempool += self.create_item("AdventureKey")
-        self.multiworld.itempool += self.create_item("FairyKey")
-        self.multiworld.itempool += self.create_item("DinoKey")
-        self.multiworld.itempool += self.create_item("EgyptKey")
-        self.multiworld.itempool += self.create_item("SolarKey")
         remaining = len(self.multiworld.itempool)
-        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, len(location_table)-remaining)]
+        #self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 20)]
 
     def fill_slot_data(self):
         return {
