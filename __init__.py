@@ -8,6 +8,7 @@ from .Rules import set_rules
 import typing
 import os
 import json
+from random import shuffle
 
 
 class CTTRWeb(WebWorld):
@@ -61,12 +62,37 @@ class CTTRWorld(World):
         return item
 
     def create_items(self):
+        #keys
         adventurekey = self.create_item("AdventureKey")
         fairykey = self.create_item("FairyKey")
         dinokey = self.create_item("DinoKey")
         egyptkey = self.create_item("EgyptKey")
         solarkey = self.create_item("SolarKey")
-        self.multiworld.itempool += [adventurekey, fairykey, dinokey, egyptkey, solarkey]
+
+        keys = [0, 1, 2, 3]
+        keyitems = [adventurekey, fairykey, dinokey, egyptkey]
+        locations = ["MI - Gem Collection", "HEF - Gem Collection", "TW - Gem Collection", "TT - Gem Collection"]
+        shuffle(keys)
+
+        #self.multiworld.itempool += [adventurekey, fairykey, dinokey, egyptkey, solarkey]
+        self.multiworld.get_location("Midway - Gem Collection", self.player).place_locked_item(keyitems[keys[0]])
+        self.multiworld.get_location(locations[keys[0]], self.player).place_locked_item(keyitems[keys[1]])
+        self.multiworld.get_location(locations[keys[1]], self.player).place_locked_item(keyitems[keys[2]])
+        self.multiworld.get_location(locations[keys[2]], self.player).place_locked_item(keyitems[keys[3]])
+        self.multiworld.get_location(locations[keys[3]], self.player).place_locked_item(solarkey)
+
+
+        #skins
+        cortexskin = self.create_item("CortexSkin")
+        cocoskin = self.create_item("CocoSkin")
+        pasadenaskin = self.create_item("PasadenaSkin")
+        crunchskin = self.create_item("CrunchSkin")
+        nginskin = self.create_item("NGinSkin")
+        ninaskin = self.create_item("NinaSkin")
+        vonclutchskin = self.create_item("VonClutchSkin")
+
+        self.multiworld.itempool += [cortexskin, cocoskin, pasadenaskin, crunchskin, nginskin, ninaskin, vonclutchskin]
+
         self.multiworld.itempool += [self.create_item("CrashCar") for i in range(0, 5)]
         self.multiworld.itempool += [self.create_item("CortexCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("CocoCar") for i in range(0, 6)]
@@ -76,7 +102,7 @@ class CTTRWorld(World):
         self.multiworld.itempool += [self.create_item("NGinCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("VonClutchCar") for i in range(0, 6)]
         remaining = len(self.multiworld.itempool)
-        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 94)]
+        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 87)]
 
     def fill_slot_data(self):
         return {

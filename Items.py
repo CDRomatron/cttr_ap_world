@@ -19,6 +19,14 @@ item_table = {
     "FairyKey": 12345432112,
     "DinoKey": 12345432113,
     "EgyptKey": 12345432114,
-    "SolarKey": 12345432115
+    "SolarKey": 12345432115,
+    "CortexSkin": 12345432116,
+    "CocoSkin": 12345432117,
+    "PasadenaSkin": 12345432118,
+    "CrunchSkin": 12345432119,
+    "NGinSkin": 12345432120,
+    "NinaSkin": 12345432121,
+    "VonClutchSkin": 12345432122,
+
 
 }
