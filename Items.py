@@ -5,20 +5,20 @@ class CTTRItem(Item):
     game: str = "CTTR"
 
 item_table = {
-    "Victory": 1,
-    "Crystal": 2,
-    "CrashCar": 3,
-    "CortexCar": 4,
-    "CocoCar": 5,
-    "PasadenaCar": 6,
-    "NinaCar": 7,
-    "NGinCar": 8,
-    "CrunchCar": 9,
-    "VonClutchCar": 10,
-    "AdventureKey": 11,
-    "FairyKey": 12,
-    "DinoKey": 13,
-    "EgyptKey": 14,
-    "SolarKey": 15
+    "Victory": 1234543211,
+    "Crystal": 1234543212,
+    "CrashCar": 1234543213,
+    "CortexCar": 1234543214,
+    "CocoCar": 1234543215,
+    "PasadenaCar": 1234543216,
+    "NinaCar": 1234543217,
+    "NGinCar": 1234543218,
+    "CrunchCar": 1234543219,
+    "VonClutchCar": 12345432110,
+    "AdventureKey": 12345432111,
+    "FairyKey": 12345432112,
+    "DinoKey": 12345432113,
+    "EgyptKey": 12345432114,
+    "SolarKey": 12345432115
 
 }

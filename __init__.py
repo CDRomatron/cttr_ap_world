@@ -76,11 +76,11 @@ class CTTRWorld(World):
         self.multiworld.itempool += [self.create_item("NGinCar") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("VonClutchCar") for i in range(0, 6)]
         remaining = len(self.multiworld.itempool)
-        #self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 20)]
+        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 94)]
 
     def fill_slot_data(self):
         return {
-            "total_crystals": self.multiworld.totalcrystals.value
+            #"total_crystals": self.multiworld.total_crystals.value
         }
     def generate_output(self, output_directory: str):
         if self.multiworld.players != 1:
