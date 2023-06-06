@@ -53,7 +53,7 @@ class CTTRWorld(World):
 
     def create_item(self, name: str) -> Item:
         item_id = item_table[name]
-        if name == "Crystal":
+        if False:
             classification = ItemClassification.filler
         else:
             classification = ItemClassification.progression
@@ -63,11 +63,11 @@ class CTTRWorld(World):
 
     def create_items(self):
         #keys
-        adventurekey = self.create_item("AdventureKey")
-        fairykey = self.create_item("FairyKey")
-        dinokey = self.create_item("DinoKey")
-        egyptkey = self.create_item("EgyptKey")
-        solarkey = self.create_item("SolarKey")
+        adventurekey = self.create_item("Adventure Key")
+        fairykey = self.create_item("Fairy Key")
+        dinokey = self.create_item("Dino Key")
+        egyptkey = self.create_item("Egypt Key")
+        solarkey = self.create_item("Solar Key")
 
         keys = [0, 1, 2, 3]
         keyitems = [adventurekey, fairykey, dinokey, egyptkey]
@@ -83,26 +83,69 @@ class CTTRWorld(World):
 
 
         #skins
-        cortexskin = self.create_item("CortexSkin")
-        cocoskin = self.create_item("CocoSkin")
-        pasadenaskin = self.create_item("PasadenaSkin")
-        crunchskin = self.create_item("CrunchSkin")
-        nginskin = self.create_item("NGinSkin")
-        ninaskin = self.create_item("NinaSkin")
-        vonclutchskin = self.create_item("VonClutchSkin")
+        cortexskin = self.create_item("Cortex Skin")
+        cocoskin = self.create_item("Coco Skin")
+        pasadenaskin = self.create_item("Pasadena Skin")
+        crunchskin = self.create_item("Crunch Skin")
+        nginskin = self.create_item("N.Gin Skin")
+        ninaskin = self.create_item("Nina Skin")
+        vonclutchskin = self.create_item("Von Clutch Skin")
+        caveskin = self.create_item("Crash Skin (Cave)")
+        classicskin = self.create_item("Crash Skin (Classic)")
+        agentskin = self.create_item("Crash Skin (Agent)")
+        madskin = self.create_item("Crash Skin (Mad)")
+        hiphopskin = self.create_item("Crash Skin (Hiphop)")
+        starskin = self.create_item("Crash Skin (Star)")
+        skeletonskin = self.create_item("Crash Skin (Skeleton)")
+        negaskin = self.create_item("Crash Skin (Nega)")
+        nakedskin = self.create_item("Crash Skin (Naked)")
 
         self.multiworld.itempool += [cortexskin, cocoskin, pasadenaskin, crunchskin, nginskin, ninaskin, vonclutchskin]
+        self.multiworld.itempool += [caveskin, classicskin, agentskin, madskin, hiphopskin, starskin, skeletonskin, negaskin, nakedskin]
 
-        self.multiworld.itempool += [self.create_item("CrashCar") for i in range(0, 5)]
-        self.multiworld.itempool += [self.create_item("CortexCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("CocoCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("CrunchCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("PasadenaCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("NinaCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("NGinCar") for i in range(0, 6)]
-        self.multiworld.itempool += [self.create_item("VonClutchCar") for i in range(0, 6)]
-        remaining = len(self.multiworld.itempool)
-        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 87)]
+        #tracks
+        adv1 = self.create_item("Track - Tiki Turbo")
+        adv2 = self.create_item("Track - Pirates of the Carburetor")
+        adv3 = self.create_item("Track - Deep Sea Driving")
+        fai1 = self.create_item("Track - Once Upon a Tire")
+        fai2 = self.create_item("Track - Track and the Beanstalk")
+        fai3 = self.create_item("Track - Evilocity")
+        din1 = self.create_item("Track - Fossil Fuel Injection")
+        din2 = self.create_item("Track - Labrea Car Pits")
+        din3 = self.create_item("Track - Tire and Ice")
+        egy1 = self.create_item("Track - Dead Heat")
+        egy2 = self.create_item("Track - Crash Test Mummies")
+        egy3 = self.create_item("Track - Pyramid Pass")
+        sol1 = self.create_item("Track - Rings of Uranus")
+        sol2 = self.create_item("Track - Uranus Mine")
+        sol3 = self.create_item("Track - Craters on Uranus")
+
+        self.multiworld.itempool += [adv1, adv2, adv3]
+        self.multiworld.itempool += [fai1, fai2, fai3]
+        self.multiworld.itempool += [din1, din2, din3]
+        self.multiworld.itempool += [egy1, egy2, egy3]
+        self.multiworld.itempool += [sol1, sol2, sol3]
+
+        #arenas
+        adva = self.create_item("Arena - Jungle Rumble")
+        dina = self.create_item("Arena - Extinction Party")
+        faia = self.create_item("Arena - Hardly Ever Land")
+        sola = self.create_item("Arena - Space Stunts")
+
+        self.multiworld.itempool += [adva, dina, faia, sola]
+
+        self.multiworld.itempool += [self.create_item("Crash Car") for i in range(0, 5)]
+        self.multiworld.itempool += [self.create_item("Cortex Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("Coco Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("Crunch Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("Pasadena Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("Nina Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("N.Gin Car") for i in range(0, 6)]
+        self.multiworld.itempool += [self.create_item("Von Clutch Car") for i in range(0, 6)]
+
+        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 30)]
+        remaining = (len(location_table) - len(self.multiworld.itempool))-4
+        self.multiworld.itempool += [self.create_item("50 Coins") for i in range(0, remaining)]
 
     def fill_slot_data(self):
         return {

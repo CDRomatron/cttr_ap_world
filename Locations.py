@@ -11,6 +11,13 @@ class CTTRLocation(Location):
         self.event = not address
 
 
+gem_table = {
+    "MI - Gem Collection": 1234543216,
+    "HEF - Gem Collection": 12345432173,
+    "TW - Gem Collection": 12345432192,
+    "TT - Gem Collection": 123454321106
+}
+
 adventure_table = {
     #Mystery Island
     "MI - Worker Crystal (M1)": 1234543210,             #1000-crystal
@@ -19,10 +26,9 @@ adventure_table = {
     "MI - Cortex Crystal (M4)": 1234543213,             #skin-cortex-crystal
     "MI - Crash Skin Classic (M11)": 1234543214,            #500-skin crashfedora
     "MI - Crash Skin Nega (M12)": 1234543215,            #2000-skin crashnega
-    "MI - Gem Collection": 1234543216,
     "MI - Tiki Turbo": 1234543217,
     "MI - Pirates of the Carburetor": 1234543218,
-    "MI - Deep See Driving": 1234543219,
+    "MI - Deep Sea Driving": 1234543219,
     "MI - Jungle Rumble": 12345432110,
     "MI - Secret": 12345432111,
     "MI - Gag Drone Cannon": 12345432112,
@@ -52,7 +58,7 @@ midway_table = {
 
 midway_tier1_table = {
     "Midway - Nina 1 (M9)":12345432132,             #mi item-nina1
-    "Midway - N.Gin 1 (M6)":12345432129,             #mi item-ngin1
+    "Midway - N. Gin 1 (M6)":12345432129,             #mi item-ngin1
     "Midway - Coco 1 (M7)":12345432130,             #mi item-coco1
 }
 
@@ -107,7 +113,6 @@ fairy_table = {
     "HEF - Worker Crystal (M20)":12345432170,            #1000-crystal
     "HEF - Worker Crystal (M21)":12345432171,            #1000-crystal
     "HEF - Crash Skin Agent (M22)":12345432172,            #1500-crashskin-blacktie
-    "HEF - Gem Collection":12345432173,
     "HEF - DOR6":12345432174,
     "HEF - DOR11":12345432175,
     "HEF - DOR13":12345432176,
@@ -131,7 +136,6 @@ dino_table = {
     "TW - Worker Crystal (M30)":12345432189,            #1000-crystal
     "TW - Worker Crystal (M31)":12345432190,            #1000-crystal
     "TW - Crunch Crystal (M32)":12345432191,            #bear-crystal
-    "TW - Gem Collection":12345432192,
     "TW - DOR2":12345432193,
     "TW - DOR15":12345432194,
     "TW - DOR18":12345432195,
@@ -149,8 +153,6 @@ dino_table = {
 
 egypt_table = {
     #Tomb Town
-
-    "TT - Gem Collection":123454321106,
     "TT - Pasadena Skin (M37)":123454321107,            #2000-skin pasadena
     "TT - Crunch Skin (M38)":123454321108,            #2000-skin crunch
     "TT - Worker Crystal (M39)":123454321109,            #1000-crystal
@@ -203,6 +205,149 @@ solar_table = {
 
 }
 
+adv1_table = {
+    "Race - Tiki Turbo (A)":123454321147,
+    "Race - Tiki Turbo (B)":123454321148,
+    "Crashinator - Tiki Turbo":123454321177,
+    "Fast Lap - Tiki Turbo":123454321192,
+    "Run and Gun - Tiki Turbo": 123454321207,
+    "Rolling Thunder - Tiki Turbo": 123454321222,
+}
+
+adv2_table = {
+    "Race - Pirates of the Carburetor (A)":123454321149,
+    "Race - Pirates of the Carburetor (B)":123454321150,
+    "Crashinator - Pirates of the Carburetor": 123454321178,
+    "Fast Lap - Pirates of the Carburetor": 123454321193,
+    "Run and Gun - Pirates of the Carburetor": 123454321208,
+    "Rolling Thunder - Pirates of the Carburetor": 123454321223,
+}
+
+adv3_table = {
+    "Race - Deep Sea Driving (A)": 123454321151,
+    "Race - Deep Sea Driving (B)": 123454321152,
+    "Crashinator - Deep Sea Driving": 123454321179,
+    "Fast Lap - Deep Sea Driving": 123454321194,
+    "Run and Gun - Deep Sea Driving": 123454321209,
+    "Rolling Thunder - Deep Sea Driving": 123454321224,
+}
+
+fai1_table = {
+    "Race - Once Upon a Tire (A)": 123454321153,
+    "Race - Once Upon a Tire (B)": 123454321154,
+    "Crashinator - Once Upon a Tire": 123454321180,
+    "Fast Lap - Once Upon a Tire": 123454321195,
+    "Run and Gun - Once Upon a Tire": 123454321210,
+    "Rolling Thunder - Once Upon a Tire": 123454321225,
+}
+
+fai2_table = {
+    "Race - Track and the Beanstalk (A)": 123454321155,
+    "Race - Track and the Beanstalk (B)": 123454321156,
+    "Crashinator - Track and the Beanstalk": 123454321181,
+    "Fast Lap - Track and the Beanstalk": 123454321196,
+    "Run and Gun - Track and the Beanstalk": 123454321211,
+    "Rolling Thunder - Track and the Beanstalk": 123454321226,
+}
+
+fai3_table = {
+    "Race - Evilocity (A)": 123454321157,
+    "Race - Evilocity (B)": 123454321158,
+    "Crashinator - Evilocity": 123454321182,
+    "Fast Lap - Evilocity": 123454321197,
+    "Run and Gun - Evilocity": 123454321212,
+    "Rolling Thunder - Evilocity": 123454321227,
+}
+
+din1_table = {
+    "Race - Fossil Fuel Injection (A)": 123454321159,
+    "Race - Fossil Fuel Injection (B)": 123454321160,
+    "Crashinator - Fossil Fuel Injection": 123454321183,
+    "Fast Lap - Fossil Fuel Injection": 123454321198,
+    "Run and Gun - Fossil Fuel Injection": 123454321213,
+    "Rolling Thunder - Fossil Fuel Injection": 123454321228,
+}
+
+din2_table = {
+    "Race - Labrea Car Pits (A)": 123454321161,
+    "Race - Labrea Car Pits (B)": 123454321162,
+    "Crashinator - Labrea Car Pits": 123454321184,
+    "Fast Lap - Labrea Car Pits": 123454321199,
+    "Run and Gun - Labrea Car Pits": 123454321214,
+    "Rolling Thunder - Labrea Car Pits": 123454321229,
+}
+
+din3_table = {
+    "Race - Tire and Ice (A)": 123454321163,
+    "Race - Tire and Ice (B)": 123454321164,
+    "Crashinator - Tire and Ice": 123454321185,
+    "Fast Lap - Tire and Ice": 123454321200,
+    "Run and Gun - Tire and Ice": 123454321215,
+    "Rolling Thunder - Tire and Ice": 123454321230,
+}
+
+egy1_table = {
+    "Race - Dead Heat (A)": 123454321165,
+    "Race - Dead Heat (B)": 123454321166,
+    "Crashinator - Dead Heat": 123454321186,
+    "Fast Lap - Dead Heat": 123454321201,
+    "Run and Gun - Dead Heat": 123454321216,
+    "Rolling Thunder - Dead Heat": 123454321231,
+}
+
+egy2_table = {
+    "Race - Crash Test Mummies (A)": 123454321167,
+    "Race - Crash Test Mummies (B)": 123454321168,
+    "Crashinator - Crash Test Mummies": 123454321187,
+    "Fast Lap - Crash Test Mummies": 123454321202,
+    "Run and Gun - Crash Test Mummies": 123454321217,
+    "Rolling Thunder - Crash Test Mummies": 123454321232,
+}
+
+egy3_table = {
+    "Race - Pyramid Pass (A)": 123454321169,
+    "Race - Pyramid Pass (B)": 123454321170,
+    "Crashinator - Pyramid Pass": 123454321188,
+    "Fast Lap - Pyramid Pass": 123454321203,
+    "Run and Gun - Pyramid Pass": 123454321218,
+    "Rolling Thunder - Pyramid Pass": 123454321233,
+}
+sol1_table = {
+    "Race - Rings of Uranus (A)": 123454321171,
+    "Race - Rings of Uranus (B)": 123454321172,
+    "Crashinator - Rings of Uranus": 123454321189,
+    "Fast Lap - Rings of Uranus": 123454321204,
+    "Run and Gun - Rings of Uranus": 123454321219,
+    "Rolling Thunder - Rings of Uranus": 123454321234,
+}
+sol2_table = {
+    "Race - Uranus Mine (A)": 123454321173,
+    "Race - Uranus Mine (B)": 123454321174,
+    "Crashinator - Uranus Mine": 123454321190,
+    "Fast Lap - Uranus Mine": 123454321205,
+    "Run and Gun - Uranus Mine": 123454321220,
+    "Rolling Thunder - Uranus Mine": 123454321235,
+}
+sol3_table = {
+    "Race - Craters on Uranus (A)": 123454321175,
+    "Race - Craters on Uranus (B)": 123454321176,
+    "Crashinator - Craters on Uranus": 123454321191,
+    "Fast Lap - Craters on Uranus": 123454321206,
+    "Run and Gun - Craters on Uranus": 123454321221,
+    "Rolling Thunder - Craters on Uranus": 123454321236
+}
+
+arena_table = {
+    "Arena - Jungle Rumble (A)": 123454321237,
+    "Arena - Jungle Rumble (B)": 123454321238,
+    "Arena - Extinction Party (A)": 123454321239,
+    "Arena - Extinction Party (B)": 123454321240,
+    "Arena - Hardly Ever Land": 123454321241,
+    "Arena - Space Stunts": 123454321242
+}
+
 location_table = {**midway_table,**adventure_table,**fairy_table,**dino_table,**egypt_table,**solar_table,
                   **midway_tier2_table,**midway_tier3_table,**midway_tier4_table,**midway_tier5_table,
-                  **midway_tier1_table}
+                  **midway_tier1_table, **adv1_table, **adv2_table, **adv3_table, **fai1_table, **fai2_table,
+                  **fai3_table, **din1_table, **din2_table, **din3_table, **egy1_table, **egy2_table, **egy3_table,
+                  **sol1_table, **sol2_table, **sol3_table, **arena_table, **gem_table}
