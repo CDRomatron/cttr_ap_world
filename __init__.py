@@ -70,6 +70,7 @@ class CTTRWorld(World):
         dinokey = self.create_item("Dino Key")
         egyptkey = self.create_item("Egypt Key")
         solarkey = self.create_item("Solar Key")
+        victory = self.create_item("Victory")
 
 
         keyitems = [adventurekey, fairykey, dinokey, egyptkey]
@@ -82,6 +83,7 @@ class CTTRWorld(World):
         self.multiworld.get_location(locations[self.keys[1]], self.player).place_locked_item(keyitems[self.keys[2]])
         self.multiworld.get_location(locations[self.keys[2]], self.player).place_locked_item(keyitems[self.keys[3]])
         self.multiworld.get_location(locations[self.keys[3]], self.player).place_locked_item(solarkey)
+        self.multiworld.get_location("AL - Ending", self.player).place_locked_item(victory)
 
 
         #skins
@@ -146,7 +148,26 @@ class CTTRWorld(World):
         self.multiworld.itempool += [self.create_item("Von Clutch Car") for i in range(0, 6)]
 
         self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 60)]
-        remaining = (len(location_table) - len(self.multiworld.itempool))-4
+
+        #dors
+        self.multiworld.itempool += [self.create_item("DOR " + str(i)) for i in range(1, 35)]
+
+        #gags
+        gag1 = self.create_item("Gag Drone Cannon")
+        gag2 = self.create_item("Gag Shark Zoo")
+        gag3 = self.create_item("Gag Love Tester")
+        gag4 = self.create_item("Gag Picture Booth")
+        gag5 = self.create_item("Gag Drone Fairy")
+        gag6 = self.create_item("Gag Poison Apple")
+        gag7 = self.create_item("Gag Drone Dart")
+        gag8 = self.create_item("Gag Ten Ton Weight")
+        gag9 = self.create_item("Gag Two Drone Tele")
+        gag10 = self.create_item("Gag Walrus Drone")
+        gag11 = self.create_item("Gag Rocket Ship")
+
+        self.multiworld.itempool += [gag1, gag2, gag3, gag4, gag5, gag6, gag7, gag8, gag9, gag10, gag11]
+
+        remaining = (len(location_table) - len(self.multiworld.itempool))-5
         self.multiworld.itempool += [self.create_item("50 Coins") for i in range(0, remaining)]
 
     def fill_slot_data(self):

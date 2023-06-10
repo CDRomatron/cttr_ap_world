@@ -51,6 +51,9 @@ def set_rules(world, player: int, area_connections, keys):
                     and state.can_reach("Midway - Von Clutch 4 (M67)", "Location", player)
                     and state.can_reach("Midway - Cortex 4 (M60)", "Location", player))
 
+    #The cortex skin crystal in MI
+    connect_regions(world, player, hubs[1], "AdventureCortex", lambda state: state.has("Cortex Skin", player, 1))
+
 
     connect_regions(world, player, hubs[0], hubs[1], lambda state: state.has("Adventure Key", player, 1))
     connect_regions(world, player, hubs[0], hubs[2], lambda state: state.has("Fairy Key", player, 1))
@@ -85,6 +88,43 @@ def set_rules(world, player: int, area_connections, keys):
     connect_regions(world, player, hubs[0], "DinA", lambda state: state.has("Arena - Extinction Party", player, 1))
     connect_regions(world, player, hubs[0], "FaiA", lambda state: state.has("Arena - Hardly Ever Land", player, 1))
     connect_regions(world, player, hubs[0], "SolA", lambda state: state.has("Arena - Space Stunts", player, 1))
+
+    #all dors
+    connect_regions(world, player, hubs[0], "AllDOR", lambda state:
+                    state.has("DOR 1", player, 1)
+                    and state.has("DOR 2", player, 1)
+                    and state.has("DOR 3", player, 1)
+                    and state.has("DOR 4", player, 1)
+                    and state.has("DOR 5", player, 1)
+                    and state.has("DOR 6", player, 1)
+                    and state.has("DOR 7", player, 1)
+                    and state.has("DOR 8", player, 1)
+                    and state.has("DOR 9", player, 1)
+                    and state.has("DOR 10", player, 1)
+                    and state.has("DOR 11", player, 1)
+                    and state.has("DOR 12", player, 1)
+                    and state.has("DOR 13", player, 1)
+                    and state.has("DOR 14", player, 1)
+                    and state.has("DOR 15", player, 1)
+                    and state.has("DOR 16", player, 1)
+                    and state.has("DOR 17", player, 1)
+                    and state.has("DOR 18", player, 1)
+                    and state.has("DOR 19", player, 1)
+                    and state.has("DOR 20", player, 1)
+                    and state.has("DOR 21", player, 1)
+                    and state.has("DOR 22", player, 1)
+                    and state.has("DOR 23", player, 1)
+                    and state.has("DOR 24", player, 1)
+                    and state.has("DOR 25", player, 1)
+                    and state.has("DOR 26", player, 1)
+                    and state.has("DOR 27", player, 1)
+                    and state.has("DOR 28", player, 1)
+                    and state.has("DOR 29", player, 1)
+                    and state.has("DOR 30", player, 1)
+                    and state.has("DOR 31", player, 1)
+                    and state.has("DOR 32", player, 1)
+                    and state.has("DOR 33", player, 1)
+                    and state.has("DOR 34", player, 1))
 
 
 

@@ -2,7 +2,7 @@ from BaseClasses import MultiWorld, Region, Entrance
 from .Locations import CTTRLocation, midway_table, adventure_table, fairy_table, dino_table, egypt_table, solar_table, \
     midway_tier2_table, midway_tier3_table, midway_tier4_table, midway_tier5_table, midway_tier1_table, adv1_table,\
     adv2_table, adv3_table, fai1_table, fai2_table, fai3_table, din1_table, din2_table, din3_table, egy1_table,\
-    egy2_table, egy3_table, sol1_table, sol2_table, sol3_table, gem_table, location_table
+    egy2_table, egy3_table, sol1_table, sol2_table, sol3_table, gem_table, adventure_cortex_table, location_table
 
 hubs = ["Menu","Adventure","Fairy","Dino","Egypt","Solar","Tier2","Tier3","Tier4","Tier5", "Tier1"]
 
@@ -103,8 +103,13 @@ def create_regions(world: MultiWorld, player: int):
     sola.locations += [
         CTTRLocation(player, "Arena - Space Stunts", location_table["Arena - Space Stunts"], sola)]
 
+    adventureCortex = Region("AdventureCortex", player, world)
+    adventureCortex.locations += [
+        CTTRLocation(player, "MI - Cortex Crystal (M4)", location_table["MI - Cortex Crystal (M4)"], adventureCortex)]
+
     adventureKey = Region("AdventurePad", player, world)
-    adventureKey.locations += [CTTRLocation(player, "MI - Gem Collection", location_table["MI - Gem Collection"], adventureKey)]
+    adventureKey.locations += [
+        CTTRLocation(player, "MI - Gem Collection", location_table["MI - Gem Collection"], adventureKey)]
 
     fairyKey = Region("FairyPad", player, world)
     fairyKey.locations += [
@@ -122,12 +127,16 @@ def create_regions(world: MultiWorld, player: int):
     solarKey.locations += [
         CTTRLocation(player, "AL - Ending", location_table["AL - Ending"], solarKey)]
 
+    alldor = Region("AllDOR", player, world)
+    alldor.locations += [
+        CTTRLocation(player, "All DOR - Crash Skin Baby", location_table["All DOR - Crash Skin Baby"], alldor)]
+
     world.initialize_regions([menu,adventure,fairy,dino,egypt,solar,tier2,tier3,tier4,tier5,tier1,adv1,adv2,adv3,
                               fai1,fai2,fai3,din1,din2,din3,egy1,egy2,egy3,sol1,sol2,sol3,adva,dina,faia,sola,
-                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey])
+                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey, adventureCortex, alldor])
     world.regions.extend([menu,adventure,fairy,dino,egypt,solar,tier2,tier3,tier4,tier5,tier1,adv1,adv2,adv3,
                               fai1,fai2,fai3,din1,din2,din3,egy1,egy2,egy3,sol1,sol2,sol3,adva,dina,faia,sola,
-                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey])
+                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey, adventureCortex, alldor])
 
 def connect_regions(world: MultiWorld, player: int, source: str, target: str, rule=None):
     sourceRegion = world.get_region(source, player)
