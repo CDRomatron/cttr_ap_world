@@ -1,7 +1,8 @@
 from ..generic.Rules import add_rule
 from .Regions import connect_regions, hubs
+from random import shuffle
 
-def set_rules(world, player: int, area_connections):
+def set_rules(world, player: int, area_connections, keys):
     connect_regions(world, player, hubs[0], hubs[0], lambda state: True)
 
     #midway checks behind MI access
@@ -57,10 +58,10 @@ def set_rules(world, player: int, area_connections):
     connect_regions(world, player, hubs[0], hubs[4], lambda state: state.has("Egypt Key", player, 1))
     connect_regions(world, player, hubs[0], hubs[5], lambda state: state.has("Solar Key", player, 1))
 
-    connect_regions(world, player, hubs[1], "AdventurePad", lambda state: state.has("Crystal", player, 5))
-    connect_regions(world, player, hubs[2], "FairyPad", lambda state: state.has("Crystal", player, 10))
-    connect_regions(world, player, hubs[3], "DinoPad", lambda state: state.has("Crystal", player, 15))
-    connect_regions(world, player, hubs[4], "EgyptPad", lambda state: state.has("Crystal", player, 20))
+    connect_regions(world, player, hubs[1], "AdventurePad", lambda state: state.has("Crystal", player, (keys.index(0)+1)*5))
+    connect_regions(world, player, hubs[2], "FairyPad", lambda state: state.has("Crystal", player, (keys.index(1)+1)*5))
+    connect_regions(world, player, hubs[3], "DinoPad", lambda state: state.has("Crystal", player, (keys.index(2)+1)*5))
+    connect_regions(world, player, hubs[4], "EgyptPad", lambda state: state.has("Crystal", player, (keys.index(3)+1)*5))
     connect_regions(world, player, hubs[5], "SolarPad", lambda state: state.has("Crystal", player, 25))
     # race regions
 

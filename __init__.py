@@ -36,6 +36,8 @@ class CTTRWorld(World):
 
     data_version = 1
 
+    keys = [0, 1, 2, 3]
+
     area_connections: typing.Dict[int, int]
 
     option_definitions = cttr_options
@@ -45,11 +47,11 @@ class CTTRWorld(World):
 
     def create_regions(self):
         create_regions(self.multiworld, self.player)
-        self.multiworld.clear_location_cache()
+        #self.multiworld.clear_location_cache()
 
     def set_rules(self):
         self.area_connections = {}
-        set_rules(self.multiworld, self.player, self.area_connections)
+        set_rules(self.multiworld, self.player, self.area_connections, self.keys)
 
     def create_item(self, name: str) -> Item:
         item_id = item_table[name]
@@ -69,17 +71,17 @@ class CTTRWorld(World):
         egyptkey = self.create_item("Egypt Key")
         solarkey = self.create_item("Solar Key")
 
-        keys = [0, 1, 2, 3]
+
         keyitems = [adventurekey, fairykey, dinokey, egyptkey]
         locations = ["MI - Gem Collection", "HEF - Gem Collection", "TW - Gem Collection", "TT - Gem Collection"]
-        shuffle(keys)
+        shuffle(self.keys)
 
         #self.multiworld.itempool += [adventurekey, fairykey, dinokey, egyptkey, solarkey]
-        self.multiworld.get_location("Midway - Gem Collection", self.player).place_locked_item(keyitems[keys[0]])
-        self.multiworld.get_location(locations[keys[0]], self.player).place_locked_item(keyitems[keys[1]])
-        self.multiworld.get_location(locations[keys[1]], self.player).place_locked_item(keyitems[keys[2]])
-        self.multiworld.get_location(locations[keys[2]], self.player).place_locked_item(keyitems[keys[3]])
-        self.multiworld.get_location(locations[keys[3]], self.player).place_locked_item(solarkey)
+        self.multiworld.get_location("Midway - Gem Collection", self.player).place_locked_item(keyitems[self.keys[0]])
+        self.multiworld.get_location(locations[self.keys[0]], self.player).place_locked_item(keyitems[self.keys[1]])
+        self.multiworld.get_location(locations[self.keys[1]], self.player).place_locked_item(keyitems[self.keys[2]])
+        self.multiworld.get_location(locations[self.keys[2]], self.player).place_locked_item(keyitems[self.keys[3]])
+        self.multiworld.get_location(locations[self.keys[3]], self.player).place_locked_item(solarkey)
 
 
         #skins
@@ -143,7 +145,7 @@ class CTTRWorld(World):
         self.multiworld.itempool += [self.create_item("N.Gin Car") for i in range(0, 6)]
         self.multiworld.itempool += [self.create_item("Von Clutch Car") for i in range(0, 6)]
 
-        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 30)]
+        self.multiworld.itempool += [self.create_item("Crystal") for i in range(0, 60)]
         remaining = (len(location_table) - len(self.multiworld.itempool))-4
         self.multiworld.itempool += [self.create_item("50 Coins") for i in range(0, remaining)]
 
