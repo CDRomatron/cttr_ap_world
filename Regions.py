@@ -125,9 +125,9 @@ def create_regions(world: MultiWorld, player: int):
     world.initialize_regions([menu,adventure,fairy,dino,egypt,solar,tier2,tier3,tier4,tier5,tier1,adv1,adv2,adv3,
                               fai1,fai2,fai3,din1,din2,din3,egy1,egy2,egy3,sol1,sol2,sol3,adva,dina,faia,sola,
                               adventureKey, fairyKey, dinoKey, egyptKey, solarKey])
-    world.regions = [menu,adventure,fairy,dino,egypt,solar,tier2,tier3,tier4,tier5,tier1,adv1,adv2,adv3,
+    world.regions.extend([menu,adventure,fairy,dino,egypt,solar,tier2,tier3,tier4,tier5,tier1,adv1,adv2,adv3,
                               fai1,fai2,fai3,din1,din2,din3,egy1,egy2,egy3,sol1,sol2,sol3,adva,dina,faia,sola,
-                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey]
+                              adventureKey, fairyKey, dinoKey, egyptKey, solarKey])
 
 def connect_regions(world: MultiWorld, player: int, source: str, target: str, rule=None):
     sourceRegion = world.get_region(source, player)
